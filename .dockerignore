@@ -1,0 +1,9 @@
+node_modules
+*.db
+.dockerignore
+Dockerfile
+.env
+.gitignore
+.http
+README.MD
+.github
