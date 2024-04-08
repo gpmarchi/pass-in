@@ -32,3 +32,5 @@ jobs:
       - name: Push image
         run: |
           docker push gpmarchi/passin:${{ steps.generate_sha.outputs.sha }}
+          docker tag gpmarchi/passin:${{ steps.generate_sha.outputs.sha }} gpmarchi/passin:latest
+          docker push gpmarchi/passin:latest
