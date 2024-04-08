@@ -21,9 +21,5 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./package.json
 COPY --from=build /app/prisma ./prisma
 RUN pnpm prisma generate
-ENV DATABASE_URL=file:./passin.db
-ENV API_BASE_URL=http://localhost:3333
-ENV PORT=3333
-RUN pnpm prisma migrate deploy
 EXPOSE 3333
 CMD [ "pnpm", "start" ]

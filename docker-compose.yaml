@@ -1,0 +1,20 @@
+services:
+  
+  passin-api:
+   build:
+    context: .
+    dockerfile: Dockerfile
+   image: gpmarchi/passin-api
+   container_name: passin-api
+   ports:
+    - "3333:3333"
+   environment:
+     - DATABASE_URL=file:./passin.db
+     - API_BASE_URL=http://localhost:3333
+     - PORT=3333
+   networks:
+     - network
+
+networks:
+  network:
+   driver: bridge
